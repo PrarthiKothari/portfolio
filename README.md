@@ -1,70 +1,211 @@
-# Getting Started with Create React App
+# Personal Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/React-18-blue?logo=react)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple?logo=bootstrap)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript)
+![Netlify](https://img.shields.io/badge/Deployed%20on-Netlify-green?logo=netlify)
 
-## Available Scripts
+## Live Demo
+🔗 https://prarthikothari-portfolio.netlify.app
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+This project is a **personal portfolio website** built using **React and Bootstrap**. It showcases my skills, projects, education, and achievements in a clean, responsive layout. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The portfolio includes sections for **skills, projects, education, achievements, and contact information**, along with links to my professional profiles.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* **React.js** – Frontend framework for building reusable components
+* **Bootstrap 5** – Responsive layout and UI styling
+* **Bootstrap Icons** – Icons for social media and UI elements
+* **JavaScript (ES6+)** – Application logic and dynamic rendering
+* **HTML5 & CSS3** – Structure and styling
+* **Netlify** – Deployment and hosting
+* **Git & GitHub** – Version control and repository management
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+portfolio/
+│
+├── public/
+│   ├── images/
+│   └── index.html
+│
+├── src/
+│   ├── Components/
+│   │   ├── Navbar.js
+│   │   ├── Skills.js
+│   │   ├── Projects.js
+│   │   ├── Education.js
+│   │   ├── Achievements.js
+│   │   └── Contact.js
+│   │
+│   ├── data/
+│   │   ├── projects.js
+│   │   └── skills.js
+│   │
+│   ├── App.js
+│   └── index.js
+│
+├── package.json
+└── README.md
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Development Process
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. Project Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* The project was initialized using **Create React App**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npx create-react-app portfolio
+cd portfolio
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* Bootstrap and Bootstrap Icons were installed to simplify responsive UI development.
 
-## Learn More
+* Bootstrap styles were imported into the React project.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 2. Component-Based Architecture
 
-### Code Splitting
+The application was built using **React components** to improve code organization and reusability.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Main components:
 
-### Analyzing the Bundle Size
+* **Navbar** – Navigation menu with section links
+* **Skills** – Displays skills with icons and styling
+* **Projects** – Project cards dynamically rendered using mapping
+* **Education** – Academic background
+* **Achievements** – Certifications and awards
+* **Contact** – Social media links and contact details
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+### 3. Dynamic Rendering
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Instead of repeating HTML for each project or skill, arrays were created and rendered using **React's `map()` function**.
 
-### Advanced Configuration
+Example:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```javascript
+{projects.map((project) => (
+  <ProjectCard key={project.id} {...project} />
+))}
+```
 
-### Deployment
+This approach improves scalability and makes it easier to add new projects.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+### 4. Responsive Design
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Bootstrap’s grid system (`row`, `col-md-*`) was used to ensure the site is responsive across:
+
+* Desktop
+* Tablet
+* Mobile devices
+
+Cards, icons, and sections automatically adjust based on screen size.
+
+---
+
+## Deployment Process
+
+The portfolio is deployed using **Netlify**.
+
+### Step 1: Push Code to GitHub
+
+```bash
+git add .
+git commit -m "Initialize project using Create React App"
+git push origin master
+```
+
+### Step 2: Connect GitHub Repository to Netlify
+
+1. Logged in to Netlify
+2. Clicked **Add new site → Import from Git**
+3. Selected the GitHub repository
+4. Configured build settings:
+```
+Build command: npm run build
+Publish directory: build
+```
+
+### Step 3: Automatic Deployment
+
+Every time changes are pushed to GitHub, Netlify automatically rebuilds and deploys the site.
+
+---
+
+## Challenges Faced and Solutions
+
+### 1. ESLint Errors During Deployment
+
+**Problem:**
+Netlify failed to build because **Create React App treats warnings as errors when `CI=true`**.
+
+---
+
+### 2. Repeated Code for Projects
+
+**Problem:**
+Multiple project cards required repeated markup.
+
+**Solution:**
+Used **React mapping with a projects data array**, improving maintainability.
+
+---
+
+### 3. Ensuring Responsive Design Across Devices
+
+**Problem:**
+Some sections initially appeared misaligned or crowded on smaller screens such as mobile devices.
+
+**Solution:**
+Bootstrap’s responsive grid system and utility classes were used to adjust layouts for different screen sizes. Columns were structured using classes such as **col-md-3, col-sm-6, and col-12** to ensure consistent responsiveness.
+
+---
+
+## Features
+
+* Responsive portfolio design
+* Dynamic project rendering using React
+* Bootstrap UI components
+* Social media integration
+* Accessible HTML (alt tags, proper links)
+* Continuous deployment with Netlify
+
+---
+
+## Future Improvements
+
+* Add animations using **Framer Motion**
+* Implement **dark/light theme toggle**
+* Add a **contact form with email integration**
+* Optimize images for faster loading
+* Improve SEO and accessibility
+
+---
+
+## Author
+
+**Prarthi Kothari**
+
+* GitHub: https://github.com/PrarthiKothari
+* LinkedIn: https://www.linkedin.com/in/prarthi-kothari28/
+
+---
+
+© 2026 Prarthi Kothari. All Rights Reserved.
