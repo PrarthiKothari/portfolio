@@ -7,11 +7,11 @@ function Achievements() {
       <div className="row">
 
         <div className="col-md-4">
-          <img src="/images/achievement1.jpg" className="img-fluid rounded"/>
+          <img src="/images/achievement1.jpg" className="img-fluid rounded" alt="Achievement award 1"/>
         </div>
 
         <div className="col-md-4">
-          <img src="/images/achievement2.jpg" className="img-fluid rounded"/>
+          <img src="/images/achievement2.jpg" className="img-fluid rounded" alt="Achievement award 2"/>
         </div>
 
       </div>

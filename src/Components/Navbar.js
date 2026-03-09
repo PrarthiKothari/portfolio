@@ -2,7 +2,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">Prarthi Kothari</a>
+        <a className="navbar-brand" href="#intro">Prarthi Kothari</a>
 
         <button
           className="navbar-toggler"
